@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/email_display_background"
+    android:layout_margin="8dp">
+
+    <!-- Sender and Time -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="4dp">
+
+        <TextView
+            android:id="@+id/tvSender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="sender@example.com"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:maxLines="1"
+            android:ellipsize="end" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2m ago"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:alpha="0.7" />
+    </LinearLayout>
+
+    <!-- Subject -->
+    <TextView
+        android:id="@+id/tvSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email Subject"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_marginBottom="4dp" />
+
+    <!-- Preview -->
+    <TextView
+        android:id="@+id/tvPreview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email content preview..."
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:alpha="0.8"
+        android:maxLines="2"
+        android:ellipsize="end" />
+
+    <!-- Status Badge -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="● Unread"
+        android:textSize="12sp"
+        android:textColor="@color/gradient_3_start"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

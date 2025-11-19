@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorTheme">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Temporary Email Address"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/gradient_3_start"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/email_display_background">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    app:tint="@color/gradient_3_start"
+                    android:src="@drawable/ic_menu_email"/>
+
+                <TextView
+                    android:id="@+id/emailTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Loading..."
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_margin="5dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnEmailCopy"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/button_primary">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    app:tint="@color/gradient_3_start"
+                    android:src="@drawable/ic_menu_copy"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Copy"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/btnEmailChange"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background="@drawable/button_primary">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    app:tint="@color/gradient_3_start"
+                    android:src="@drawable/ic_menu_change"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Change"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:textColor="@android:color/black"/>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

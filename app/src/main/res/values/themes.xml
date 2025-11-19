@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Base.Theme.SMaliTM" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/gradient_3_start</item>
+        <item name="colorPrimaryVariant">@color/primary_blue_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">@color/colorTheme</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowBackground">@color/colorTheme</item>
+        <item name="android:navigationBarColor">@color/colorTheme</item>
+    </style>
+
+    <style name="Theme.SMaliTM" parent="Base.Theme.SMaliTM" />
+    
+    <!-- Button Styles -->
+    <style name="PrimaryButton" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/button_primary</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:elevation">0dp</item>
+    </style>
+    
+    <style name="SecondaryButton" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">16sp</item>
+        <item name="strokeColor">@color/border_gray</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+    </style>
+    
+    <!-- Text Styles -->
+    <style name="TitleText">
+        <item name="android:textSize">32sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    
+    <style name="SubtitleText">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+    
+    <style name="LabelText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    
+    <style name="BodyText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/text_primary</item>
+    </style>
+    
+    <style name="CaptionText">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_secondary</item>
+    </style>
+</resources>
