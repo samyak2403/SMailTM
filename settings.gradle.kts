@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SMaliTM"
+rootProject.name = "SMailTM"
 include(":app")
-include(":smalitm")
+include(":caning")

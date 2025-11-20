@@ -72,9 +72,9 @@ afterEvaluate {
                 version = "1.0.0"
                 
                 pom {
-                    name.set("SMaliTM")
+                    name.set("SMailTM")
                     description.set("Kotlin Mail.tm API Wrapper for Android")
-                    url.set("https://github.com/samyak2403/SMaliTM")
+                    url.set("https://github.com/samyak2403/SMailTM")
                     
                     licenses {
                         license {
@@ -92,9 +92,9 @@ afterEvaluate {
                     }
                     
                     scm {
-                        connection.set("scm:git:git://github.com/yourusername/SMaliTM.git")
-                        developerConnection.set("scm:git:ssh://github.com/yourusername/SMaliTM.git")
-                        url.set("https://github.com/yourusername/SMaliTM")
+                        connection.set("scm:git:git://github.com/yourusername/SMailTM.git")
+                        developerConnection.set("scm:git:ssh://github.com/yourusername/SMailTM.git")
+                        url.set("https://github.com/yourusername/SMailTM")
                     }
                 }
             }

@@ -2,7 +2,7 @@ package com.samyak.smalitm.util
 
 import com.google.gson.JsonParser
 import com.samyak.smalitm.Config
-import com.samyak.smalitm.SMaliTM
+import com.samyak.smalitm.SMailTM
 import com.samyak.smalitm.io.IO
 import javax.security.auth.login.LoginException
 
@@ -12,22 +12,22 @@ import javax.security.auth.login.LoginException
 object SMaliBuilder {
 
     /**
-     * Logs in to the API and returns a SMaliTM instance.
+     * Logs in to the API and returns a SMailTM instance.
      *
      * @param email the email address to log in with
      * @param password the password for authentication
-     * @return a new SMaliTM instance for the authenticated user
+     * @return a new SMailTM instance for the authenticated user
      * @throws LoginException if authentication fails or network errors occur
      */
     @Throws(LoginException::class)
-    fun login(email: String, password: String): SMaliTM {
+    fun login(email: String, password: String): SMailTM {
         return try {
             val jsonData = "{\"address\" : \"${email.trim()}\",\"password\" : \"${password.trim()}\"}"
             val response = IO.requestPOST("${Config.BASEURL}/token", jsonData)
             
             if (response.responseCode == 200) {
                 val json = JsonParser.parseString(response.response).asJsonObject
-                SMaliTM(json.get("token").asString, json.get("id").asString)
+                SMailTM(json.get("token").asString, json.get("id").asString)
             } else {
                 throw LoginException(response.response)
             }
@@ -61,11 +61,11 @@ object SMaliBuilder {
      *
      * @param email the email address for the new account
      * @param password the password for the new account
-     * @return a new SMaliTM instance for the created and authenticated user
+     * @return a new SMailTM instance for the created and authenticated user
      * @throws LoginException if account creation or login fails
      */
     @Throws(LoginException::class)
-    fun createAndLogin(email: String, password: String): SMaliTM {
+    fun createAndLogin(email: String, password: String): SMailTM {
         return try {
             val jsonData = "{\"address\" : \"${email.trim().lowercase()}\",\"password\" : \"${password.trim()}\"}"
             val response = IO.requestPOST("${Config.BASEURL}/accounts", jsonData)
@@ -85,11 +85,11 @@ object SMaliBuilder {
      * Creates and logs in to a randomly generated account.
      *
      * @param password the password for the new account
-     * @return a new SMaliTM instance for the created and authenticated user
+     * @return a new SMailTM instance for the created and authenticated user
      * @throws LoginException if account creation or login fails
      */
     @Throws(LoginException::class)
-    fun createDefault(password: String): SMaliTM {
+    fun createDefault(password: String): SMailTM {
         return try {
             val email = "${Utility.createRandomString(8)}@${Domains.getRandomDomain().domainName}"
             createAndLogin(email, password)
@@ -102,11 +102,11 @@ object SMaliBuilder {
      * Login into an account with token
      *
      * @param token the jwt token of the account
-     * @return the SMaliTM instance to a jwt specified account
+     * @return the SMailTM instance to a jwt specified account
      * @throws LoginException when network error or token provided is invalid
      */
     @Throws(LoginException::class)
-    fun loginWithToken(token: String): SMaliTM {
+    fun loginWithToken(token: String): SMailTM {
         return try {
             val response = IO.requestGET("${Config.BASEURL}/me", token)
             
@@ -114,7 +114,7 @@ object SMaliBuilder {
                 401 -> throw LoginException("Invalid Token Provided")
                 200 -> {
                     val json = JsonParser.parseString(response.response).asJsonObject
-                    SMaliTM(token, json.get("id").asString)
+                    SMailTM(token, json.get("id").asString)
                 }
                 else -> throw LoginException("Invalid response received")
             }

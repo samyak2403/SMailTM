@@ -38,8 +38,8 @@ android {
 }
 
 dependencies {
-    // SMaliTM Library
-    implementation(project(":smalitm"))
+    // SMailTM Library
+    implementation(project(":caning"))
     
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

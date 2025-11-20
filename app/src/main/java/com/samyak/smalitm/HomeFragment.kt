@@ -19,7 +19,6 @@ import com.samyak.smalitm.callbacks.EventListener
 import com.samyak.smalitm.util.Account
 import com.samyak.smalitm.util.Message
 import com.samyak.smalitm.util.SMaliBuilder
-import com.samyak.smalitm.SMaliTM
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -30,7 +29,7 @@ class HomeFragment : Fragment() {
     private val viewModel: SharedViewModel by activityViewModels()
     private val currentPassword = "password123"
     private var currentEmail = ""
-    private var mailTM: SMaliTM? = null
+    private var mailTM: SMailTM? = null
     private var isListenerActive = false
     private var onMessageReceived: ((Message) -> Unit)? = null
     

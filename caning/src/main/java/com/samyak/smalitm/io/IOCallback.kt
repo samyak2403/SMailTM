@@ -4,13 +4,13 @@ import com.google.gson.Gson
 import com.google.gson.JsonParser
 import com.launchdarkly.eventsource.EventHandler
 import com.launchdarkly.eventsource.MessageEvent
-import com.samyak.smalitm.SMaliTM
+import com.samyak.smalitm.SMailTM
 import com.samyak.smalitm.callbacks.EventListener
 import com.samyak.smalitm.util.Account
 
 class IOCallback(
     private val listener: EventListener,
-    private val mailTM: SMaliTM
+    private val mailTM: SMailTM
 ) : EventHandler {
 
     override fun onOpen() {

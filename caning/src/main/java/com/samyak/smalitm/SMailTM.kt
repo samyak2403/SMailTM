@@ -18,20 +18,19 @@ import com.samyak.smalitm.util.Response
 import okhttp3.Headers
 import org.slf4j.LoggerFactory
 import java.net.URI
-import java.time.Duration
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import kotlin.concurrent.thread
 
 /**
- * The SMaliTM Class which handles the API instance and operations.
+ * The SMailTM Class which handles the API instance and operations.
  * This class provides methods for managing email accounts, messages, and event handling.
  */
-class SMaliTM(
+class SMailTM(
     private var bearerToken: String,
     private val id: String
 ) {
-    private val log = LoggerFactory.getLogger(SMaliTM::class.java)
+    private val log = LoggerFactory.getLogger(SMailTM::class.java)
     private val gson = GsonBuilder()
         .registerTypeAdapterFactory(TokenAdapter(bearerToken))
         .create()
@@ -44,7 +43,7 @@ class SMaliTM(
     fun getId(): String = id
 
     /**
-     * Initializes the SMaliTM instance by performing necessary setup operations.
+     * Initializes the SMailTM instance by performing necessary setup operations.
      * Note: This is only required when using createDefault()
      */
     fun init() {

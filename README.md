@@ -1,6 +1,6 @@
-# SMaliTM - Kotlin Mail.tm API Wrapper
+# SMailTM - Kotlin Mail.tm API Wrapper
 
-[![JitPack](https://jitpack.io/v/samyak2403/SMaliTM.svg)](https://jitpack.io/#yourusername/SMaliTM)
+[![JitPack](https://jitpack.io/v/samyak2403/SMailTM.svg)](https://jitpack.io/#yourusername/SMailTM)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.0-blue.svg)](https://kotlinlang.org/)
 [![API](https://img.shields.io/badge/API-24%2B-brightgreen.svg)](https://android-arsenal.com/api?level=24)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -76,16 +76,16 @@ allprojects {
 
 #### Step 2: Add the dependency
 
-Add SMaliTM to your app's `build.gradle.kts`:
+Add SMailTM to your app's `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-      implementation 'com.github.samyak2403:SMaliTM:1.0.0'
+      implementation 'com.github.samyak2403:SMailTM:1.0.0'
 
 }
 ```
 
-**Latest Version:** [![JitPack](https://jitpack.io/v/samyak2403/SMaliTM.svg)](https://jitpack.io/#yourusername/SMaliTM)
+**Latest Version:** [![JitPack](https://jitpack.io/v/samyak2403/SMailTM.svg)](https://jitpack.io/#yourusername/SMailTM)
 
 ### Gradle (Local Module)
 
@@ -93,11 +93,11 @@ If you want to include the library as a local module:
 
 ```kotlin
 // settings.gradle.kts
-include(":smalitm")
+include(":SMailTM")
 
 // app/build.gradle.kts
 dependencies {
-    implementation(project(":smalitm"))
+    implementation(project(":SMailTM"))
 }
 ```
 
@@ -113,7 +113,7 @@ dependencies {
 
 <dependency>
     <groupId>com.github.yourusername</groupId>
-    <artifactId>SMaliTM</artifactId>
+    <artifactId>SMailTM</artifactId>
     <version>1.0.0</version>
 </dependency>
 ```
@@ -134,8 +134,8 @@ dependencies {
 ### Basic Example
 
 ```kotlin
-import com.samyak.smalitm.util.SMaliBuilder
-import com.samyak.smalitm.callbacks.MessageFetchedCallback
+import com.samyak.SMailTM.util.SMaliBuilder
+import com.samyak.SMailTM.callbacks.MessageFetchedCallback
 import javax.security.auth.login.LoginException
 
 // Create a temporary email account
@@ -169,7 +169,7 @@ mailTM.fetchMessages(object : MessageFetchedCallback {
 #### Create with Random Email
 
 ```kotlin
-import com.samyak.smalitm.util.SMaliBuilder
+import com.samyak.SMailTM.util.SMaliBuilder
 import javax.security.auth.login.LoginException
 
 try {
@@ -232,9 +232,9 @@ try {
 #### Fetch All Messages
 
 ```kotlin
-import com.samyak.smalitm.callbacks.MessageFetchedCallback
-import com.samyak.smalitm.util.Message
-import com.samyak.smalitm.util.Response
+import com.samyak.SMailTM.callbacks.MessageFetchedCallback
+import com.samyak.SMailTM.util.Message
+import com.samyak.SMailTM.util.Response
 
 mailTM.fetchMessages(object : MessageFetchedCallback {
     override fun onMessagesFetched(messages: List<Message>) {
@@ -294,8 +294,8 @@ println("From: ${message.senderName} <${message.senderAddress}>")
 ### Real-time Event Listener
 
 ```kotlin
-import com.samyak.smalitm.callbacks.EventListener
-import com.samyak.smalitm.util.Account
+import com.samyak.SMailTM.callbacks.EventListener
+import com.samyak.SMailTM.util.Account
 
 mailTM.openEventListener(object : EventListener {
     override fun onReady() {
@@ -493,7 +493,7 @@ println("Total messages: $totalMessages")
 ### Domain Management
 
 ```kotlin
-import com.samyak.smalitm.util.Domains
+import com.samyak.SMailTM.util.Domains
 
 // Fetch all available domains
 val domains = Domains.fetchDomains()
@@ -583,7 +583,7 @@ if (savedToken != null) {
 ### Custom Domain Selection
 
 ```kotlin
-import com.samyak.smalitm.util.Domains
+import com.samyak.SMailTM.util.Domains
 
 // Get available domains
 val domains = Domains.fetchDomains()
@@ -605,7 +605,7 @@ val mailTM = SMaliBuilder.createAndLogin(email, "password")
 
 ```kotlin
 class EmailManager {
-    private val accounts = mutableMapOf<String, SMaliTM>()
+    private val accounts = mutableMapOf<String, SMailTM>()
     
     fun addAccount(email: String, password: String) {
         try {
@@ -617,7 +617,7 @@ class EmailManager {
         }
     }
     
-    fun getAccount(email: String): SMaliTM? {
+    fun getAccount(email: String): SMailTM? {
         return accounts[email]
     }
     
@@ -637,17 +637,17 @@ class EmailManager {
 
 ### SMaliBuilder
 
-Factory class for creating and managing SMaliTM instances.
+Factory class for creating and managing SMailTM instances.
 
 | Method | Parameters | Returns | Description |
 |--------|------------|---------|-------------|
-| `login()` | email: String, password: String | SMaliTM | Login to existing account |
+| `login()` | email: String, password: String | SMailTM | Login to existing account |
 | `create()` | email: String, password: String | Boolean | Create new account |
-| `createAndLogin()` | email: String, password: String | SMaliTM | Create and login in one step |
-| `createDefault()` | password: String | SMaliTM | Create account with random email |
-| `loginWithToken()` | token: String | SMaliTM | Login using JWT token |
+| `createAndLogin()` | email: String, password: String | SMailTM | Create and login in one step |
+| `createDefault()` | password: String | SMailTM | Create account with random email |
+| `loginWithToken()` | token: String | SMailTM | Login using JWT token |
 
-### SMaliTM
+### SMailTM
 
 Main class for interacting with Mail.tm API.
 
@@ -865,7 +865,7 @@ try {
 
 ```kotlin
 class MainActivity : AppCompatActivity() {
-    private var mailTM: SMaliTM? = null
+    private var mailTM: SMailTM? = null
     
     override fun onDestroy() {
         super.onDestroy()
@@ -959,7 +959,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 1. **Fork the repository**
    ```bash
-   git clone https://github.com/samyak2403/SMaliTM.git
+   git clone https://github.com/samyak2403/SMailTM.git
    ```
 
 2. **Create your feature branch**
@@ -983,8 +983,8 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ```bash
 # Clone the repository
-git clone https://github.com/samyak2403/SMaliTM.git
-cd SMaliTM
+git clone https://github.com/samyak2403/SMailTM.git
+cd SMailTM
 
 # Open in Android Studio
 # Build the project
@@ -1053,8 +1053,8 @@ This library is a Kotlin conversion of [JMailTM](https://github.com/shivam1608/J
 
 For issues, questions, or contributions, please visit:
 
-- **GitHub Issues:** [Report a bug](https://github.com/samyak2403/SMaliTM/issues)
-- **GitHub Discussions:** [Ask a question](https://github.com/samyak2403/SMaliTM/discussions)
+- **GitHub Issues:** [Report a bug](https://github.com/samyak2403/SMailTM/issues)
+- **GitHub Discussions:** [Ask a question](https://github.com/samyak2403/SMailTM/discussions)
 - **Email:** arrowwould@gmail.com
 
 ## 🔗 Links
@@ -1095,10 +1095,11 @@ For issues, questions, or contributions, please visit:
 
 **⭐ Star this repository if you find it helpful!**
 
-**🐛 Found a bug? [Report it here](https://github.com/samyak2403/SMaliTM/issues)**
+**🐛 Found a bug? [Report it here](https://github.com/samyak2403/SMailTM/issues)**
 
-**💡 Have a feature request? [Let us know](https://github.com/samyak2403/SMaliTM/discussions)**
+**💡 Have a feature request? [Let us know](https://github.com/samyak2403/SMailTM/discussions)**
 #
+
 
 
 

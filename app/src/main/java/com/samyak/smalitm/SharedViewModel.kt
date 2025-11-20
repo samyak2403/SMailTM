@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 
 class SharedViewModel : ViewModel() {
     
-    private val _mailTM = MutableLiveData<SMaliTM?>()
-    val mailTM: LiveData<SMaliTM?> = _mailTM
+    private val _mailTM = MutableLiveData<SMailTM?>()
+    val mailTM: LiveData<SMailTM?> = _mailTM
     
     private val _email = MutableLiveData<String>()
     val email: LiveData<String> = _email
@@ -18,7 +18,7 @@ class SharedViewModel : ViewModel() {
     private val _isListenerActive = MutableLiveData<Boolean>(false)
     val isListenerActive: LiveData<Boolean> = _isListenerActive
     
-    fun setMailTM(mail: SMaliTM?, email: String) {
+    fun setMailTM(mail: SMailTM?, email: String) {
         _mailTM.value = mail
         _email.value = email
         _isAccountActive.value = mail != null

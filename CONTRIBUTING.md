@@ -1,6 +1,6 @@
-# Contributing to SMaliTM
+# Contributing to SMailTM
 
-First off, thank you for considering contributing to SMaliTM! 🎉
+First off, thank you for considering contributing to SMailTM! 🎉
 
 ## 📋 Table of Contents
 
@@ -57,11 +57,11 @@ Enhancement suggestions are tracked as GitHub issues. When creating an enhanceme
 
 ```bash
 # Clone your fork
-git clone https://github.com/samyak2403/SMaliTM.git
-cd SMaliTM
+git clone https://github.com/samyak2403/SMailTM.git
+cd SMailTM
 
 # Add upstream remote
-git remote add upstream https://github.com/originalowner/SMaliTM.git
+git remote add upstream https://github.com/originalowner/SMailTM.git
 
 # Create a branch
 git checkout -b feature/my-feature
@@ -125,10 +125,10 @@ Follow [Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-convention
  * Creates a temporary email account with the specified password.
  *
  * @param password The password for the account
- * @return SMaliTM instance
+ * @return SMailTM instance
  * @throws LoginException if account creation fails
  */
-fun createAccount(password: String): SMaliTM {
+fun createAccount(password: String): SMailTM {
     require(password.isNotEmpty()) { "Password cannot be empty" }
     
     return SMaliBuilder.createDefault(password).apply {
@@ -188,7 +188,7 @@ Fixes #456
 ./gradlew test
 
 # Run specific test
-./gradlew :smalitm:test --tests "MessageTest"
+./gradlew :SMailTM:test --tests "MessageTest"
 
 # Run with coverage
 ./gradlew jacocoTestReport
@@ -203,7 +203,7 @@ Fixes #456
 
 ```kotlin
 @Test
-fun `createAccount should return valid SMaliTM instance`() {
+fun `createAccount should return valid SMailTM instance`() {
     // Arrange
     val password = "testPassword123"
     
@@ -231,3 +231,4 @@ Contributors will be recognized in:
 - GitHub contributors page
 
 Thank you for contributing! 🙏
+

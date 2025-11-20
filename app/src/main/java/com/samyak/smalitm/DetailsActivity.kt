@@ -9,7 +9,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.samyak.smalitm.SMaliTM
+import com.samyak.smalitm.SMailTM
 import com.samyak.smalitm.callbacks.MessageFetchedCallback
 import com.samyak.smalitm.util.Message
 import com.samyak.smalitm.util.Response
@@ -30,7 +30,7 @@ class DetailsActivity : AppCompatActivity() {
     
     private var messageId: String = ""
     private var hasHtml: Boolean = false
-    private var mailTM: SMaliTM? = null
+    private var mailTM: SMailTM? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,7 +61,7 @@ class DetailsActivity : AppCompatActivity() {
     }
     
     companion object {
-        var sharedMailTM: SMaliTM? = null
+        var sharedMailTM: SMailTM? = null
     }
 
     private fun initViews() {
@@ -133,7 +133,7 @@ class DetailsActivity : AppCompatActivity() {
         if (timestamp.isEmpty()) return "Unknown time"
         
         return try {
-            // Use SMaliTM's Utility class to parse the timestamp
+            // Use SMailTM's Utility class to parse the timestamp
             val zonedDateTime = com.samyak.smalitm.util.Utility.parseToDefaultTimeZone(
                 timestamp, 
                 "yyyy-MM-dd'T'HH:mm:ss'+00:00'"
@@ -154,7 +154,7 @@ class DetailsActivity : AppCompatActivity() {
                 else -> formatFullDate(date)
             }
         } catch (e: Exception) {
-            // Fallback to simple date parsing if SMaliTM utility fails
+            // Fallback to simple date parsing if SMailTM utility fails
             try {
                 val sdf = java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'+00:00'", java.util.Locale.getDefault())
                 val date = sdf.parse(timestamp)
@@ -241,7 +241,7 @@ class DetailsActivity : AppCompatActivity() {
     }
     
     private fun displayMessage(message: Message) {
-        // Update UI with message details using SMaliTM properties
+        // Update UI with message details using SMailTM properties
         val displayName = if (message.senderName.isNotEmpty() && message.senderName != message.senderAddress) {
             message.senderName
         } else {
@@ -255,7 +255,7 @@ class DetailsActivity : AppCompatActivity() {
         tvAvatar.text = displayName.firstOrNull()?.uppercaseChar()?.toString() ?: "?"
         tvAvatar.background = resources.getDrawable(R.drawable.avatar_circle, null)
         
-        // Use SMaliTM's built-in date/time method
+        // Use SMailTM's built-in date/time method
         try {
             val zonedDateTime = message.getCreatedDateTime()
             val date = java.util.Date.from(zonedDateTime.toInstant())

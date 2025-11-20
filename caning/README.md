@@ -1110,7 +1110,7 @@ To publish a new version to JitPack:
    - Publish the release
 
 3. **JitPack will automatically build:**
-   - Visit https://jitpack.io/#yourusername/SMaliTM
+   - Visit https://jitpack.io/samyak2403/SMaliTM
    - Click "Get it" on your version
    - JitPack will build and publish your library
 
@@ -1145,7 +1145,7 @@ before_install:
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/SMaliTM.git
+git clone https://github.com/samyak2403/SMaliTM.git
 cd SMaliTM
 
 # Build the library
@@ -1188,6 +1188,6 @@ Features demonstrated:
 
 **⭐ Star this repository if you find it helpful!**
 
-**🐛 Found a bug? [Report it here](https://github.com/yourusername/SMaliTM/issues)**
+**🐛 Found a bug? [Report it here](https://github.com/samyak2403/SMaliTM/issues)**
 
-**💡 Have a feature request? [Let us know](https://github.com/yourusername/SMaliTM/discussions)**
+**💡 Have a feature request? [Let us know](https://github.com/samyak2403/SMaliTM/discussions)**
