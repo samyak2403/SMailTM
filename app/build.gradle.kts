@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.samyak.smalitm"
+    namespace = "com.samyak.smailtm"
     compileSdk {
         version = release(36)
     }
@@ -39,7 +39,7 @@ android {
 
 dependencies {
     // SMailTM Library
-    implementation(project(":caning"))
+    implementation(project(":smailtm"))
     
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "SMailTM"
 include(":app")
-include(":caning")
+include(":smailtm")
